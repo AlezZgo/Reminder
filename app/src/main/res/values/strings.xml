@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Reminder</string>
     <string name="set_alarm">Set alarm</string>
+    <string name="stop">Stop</string>
 </resources>
