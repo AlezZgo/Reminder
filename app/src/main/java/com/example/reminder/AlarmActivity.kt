@@ -10,7 +10,6 @@ import android.os.Vibrator
 import androidx.appcompat.app.AppCompatActivity
 import com.example.reminder.databinding.ActivityAlarmBinding
 
-
 class AlarmActivity : AppCompatActivity() {
 
     private val ringtone: Ringtone? = null
