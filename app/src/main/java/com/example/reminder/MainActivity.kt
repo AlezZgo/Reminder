@@ -39,18 +39,14 @@ class MainActivity : AppCompatActivity() {
             calendar.set(Calendar.HOUR_OF_DAY, this.hour)
 
             val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-
             val info = AlarmManager.AlarmClockInfo(calendar.timeInMillis ,pendingIntent())
-
             alarmManager.setAlarmClock(info,alarmActionPendingIntent())
-
             val simpleDateFormat = SimpleDateFormat("HH:mm",Locale.getDefault())
-
             Toast.makeText(applicationContext,"AlarmClock ${simpleDateFormat.format(calendar.time)}",Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun pendingIntent(): PendingIntent? {
+    private fun pendingIntent(): PendingIntent {
         val alarmInfoIntent = Intent(this,MainActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -58,9 +54,10 @@ class MainActivity : AppCompatActivity() {
         return PendingIntent.getActivity(this,0,alarmInfoIntent,PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
-    private fun alarmActionPendingIntent(): PendingIntent? {
+    private fun alarmActionPendingIntent(): PendingIntent {
         val intent = Intent(this,AlarmActivity::class.java )
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         return PendingIntent.getActivity(this,1,intent,PendingIntent.FLAG_UPDATE_CURRENT)
     }
 }
