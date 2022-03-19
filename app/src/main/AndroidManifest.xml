@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:allowBackup="true"
@@ -22,7 +23,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AlarmActivity"/>
+        <activity android:name=".AlarmActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

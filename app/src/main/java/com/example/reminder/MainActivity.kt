@@ -5,6 +5,8 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+import android.view.WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.reminder.databinding.ActivityMainBinding
@@ -12,6 +14,7 @@ import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
